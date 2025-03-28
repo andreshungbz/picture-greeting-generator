@@ -1,0 +1,31 @@
+{
+  "name": "picture-greeting-generator",
+  "version": "1.0.0",
+  "description": "A simple web application for the CMPS2212 GUI Programming course that demonstrates working with JavaScript Promises",
+  "homepage": "https://github.com/andreshungbz/picture-greeting-generator#readme",
+  "bugs": {
+    "url": "https://github.com/andreshungbz/picture-greeting-generator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreshungbz/picture-greeting-generator.git"
+  },
+  "license": "ISC",
+  "author": "Andres Hung",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.2",
+    "wait-on": "^8.0.3"
+  }
+}
