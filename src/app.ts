@@ -31,7 +31,13 @@ app.use('/', mainRoutes);
 app.use(missing);
 
 // generate inital data object
-export const data = generateAll();
+export let data = generateAll();
+
+// refresh data every 24 hours
+setInterval(() => {
+  data = generateAll();
+  console.log('[PGG] Data regernated.');
+}, 24 * 60 * 60 * 1000);
 
 // start server
 app.listen(PORT, () => {
