@@ -44,12 +44,16 @@ export const generateAll = (): PictureGreetingData => {
 export const generatePictureGreeting = (
   daily: boolean = false
 ): PictureGreeting => {
-  // use the date and time for seeding PRNG
-  let today = new Date().toISOString();
+  // use the current date and time for seeding PRNG
+  const now = new Date();
+  let today = now.toLocaleString('en-BZ', {
+    timeZone: 'America/Belize',
+  });
+  today = `${today}.${now.getMilliseconds()}`;
 
   // for daily, just create a hash from the date (e.g., "2025-03-28")
   if (daily) {
-    today = today.split('T')[0];
+    today = today.split(',')[0];
   }
 
   // create a hash from the date to use as a seed, and create a generator
