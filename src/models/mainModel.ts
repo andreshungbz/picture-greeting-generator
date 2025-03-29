@@ -1,11 +1,13 @@
 // Filename: mainModel.ts
 // application models for retrieving data
 
-import { generateDaily } from '../utils/generate.js';
+import { PictureGreeting } from '../types/PictureGreeting.js';
+import { generatePictureGreeting } from '../utils/generate.js';
 
-// import { PictureGreeting } from '../types/PictureGreeting.js';
+export const getDaily = (): PictureGreeting => {
+  return generatePictureGreeting(true);
+};
 
-// function to get the PictureGreeting of the day
-export const getDaily = () => {
-  console.log(generateDaily());
+export const getRandom = (): PictureGreeting => {
+  return generatePictureGreeting();
 };

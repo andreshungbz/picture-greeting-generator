@@ -41,9 +41,16 @@ export const generateAll = (): PictureGreetingData => {
 };
 
 // function to generate the daily picture and greeting
-export const generateDaily = (): PictureGreeting => {
-  // get today's date as a seed (e.g., "2025-03-28")
-  const today = new Date().toISOString().split('T')[0];
+export const generatePictureGreeting = (
+  daily: boolean = false
+): PictureGreeting => {
+  // use the date and time for seeding PRNG
+  let today = new Date().toISOString();
+
+  // for daily, just create a hash from the date (e.g., "2025-03-28")
+  if (daily) {
+    today = today.split('T')[0];
+  }
 
   // create a hash from the date to use as a seed, and create a generator
   const seed = crypto.createHash('sha256').update(today).digest('hex');
@@ -51,7 +58,7 @@ export const generateDaily = (): PictureGreeting => {
 
   // select the random image path and greeting
   const iIndex = rand.int(0, data.imagePaths.length - 1);
-  const gIndex = rand.int(data.greetings.length - 1);
+  const gIndex = rand.int(0, data.greetings.length - 1);
 
   return {
     imgPath: data.imagePaths[iIndex],
