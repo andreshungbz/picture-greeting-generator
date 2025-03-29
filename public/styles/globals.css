@@ -1,11 +1,124 @@
+/* Filename: globals.css */
+/* basic application styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Schoolbell&display=swap');
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100vh;
+}
+
+.app > :nth-child(2) {
+  flex-grow: 1;
+}
+
+header,
+footer {
+  background: rebeccapurple;
+  color: white;
+}
+
+header a,
+footer a {
+  text-decoration: none;
+}
+
+header a:visited,
+footer a:visited {
+  color: white;
+}
+
+header {
+  padding: 20px 10px;
+  font-family: 'Bebas Neue', Helvetica, sans-serif;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 5px;
+}
+
+header h1 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+main section[class] {
+  display: flex;
+  justify-content: center;
+}
+
+blockquote {
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+  font-family: Schoolbell, sans-serif;
+  text-align: center;
+}
+
+#image {
+  box-shadow: -2px 2px 5px gray;
+  display: block;
+  max-width: 350px;
+  max-height: 350px;
+  border: 3px solid rebeccapurple;
+}
+
+#author {
+  font-size: medium;
+}
+
+#generate-button {
+  padding: 10px 30px;
   background-color: rebeccapurple;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+#generate-button:hover {
+  background-color: rgb(146, 83, 208);
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    justify-content: start;
+    margin: 0 10px;
+  }
+
+  #image {
+    width: 100%;
+  }
+
+  #greeting {
+    font-size: x-large;
+  }
 }

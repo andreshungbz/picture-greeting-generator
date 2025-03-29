@@ -9,9 +9,37 @@ main page for web application -->
     <link href="/styles/globals.css" rel="stylesheet" />
     <title>Picture Greeting Generator</title>
   </head>
-  <body>
-    <div class="app">
-      <main><h1>Picture Greeting Generator</h1></main>
-    </div>
+  <body class="app">
+    <header>
+      <a href="/"><h1 class="heading1-text">Picture Greeting Generator</h1></a>
+    </header>
+    <main>
+      <section class="image-section">
+        <img
+          id="image"
+          src="/images/travel/ac-hotel.png"
+          alt="Randomly generated image from the server."
+        />
+      </section>
+      <section class="greeting-section">
+        <blockquote>
+          <i id="greeting">It is what it is...</i>
+          <cite id="author">Tysha D.</cite>
+        </blockquote>
+      </section>
+      <section class="controls-section">
+        <button id="generate-button">Generate</button>
+      </section>
+    </main>
+    <footer>
+      <span class="footer-text"
+        >Andres Hung |
+        <a
+          href="https://github.com/andreshungbz/picture-greeting-generator"
+          target="_blank"
+          >GitHub</a
+        ></span
+      >
+    </footer>
   </body>
 </html>
