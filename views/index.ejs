@@ -7,6 +7,7 @@ main page for web application -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/styles/globals.css" rel="stylesheet" />
+    <script src="/scripts/main.js" defer></script>
     <title>Picture Greeting Generator</title>
   </head>
   <body class="app">
@@ -17,14 +18,14 @@ main page for web application -->
       <section class="image-section">
         <img
           id="image"
-          src="/images/travel/ac-hotel.png"
+          src="<%= imgPath %>"
           alt="Randomly generated image from the server."
         />
       </section>
       <section class="greeting-section">
         <blockquote>
-          <i id="greeting">It is what it is...</i>
-          <cite id="author">Tysha D.</cite>
+          <i id="greeting"><%= greeting.text %></i>
+          <cite id="author"><%= greeting.author %></cite>
         </blockquote>
       </section>
       <section class="controls-section">
