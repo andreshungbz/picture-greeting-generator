@@ -7,6 +7,7 @@ import path from 'path';
 import logger from './middleware/logger.js';
 import missing from './middleware/missing.js';
 import getLocalIPAddress from './utils/getLocalIPAddress.js';
+import { generateAll } from './utils/generate.js';
 
 import mainRoutes from './routes/mainRoute.js';
 
@@ -28,6 +29,9 @@ app.use('/', mainRoutes);
 
 // handle non-existent routes
 app.use(missing);
+
+// generate inital data object
+export const data = generateAll();
 
 // start server
 app.listen(PORT, () => {
