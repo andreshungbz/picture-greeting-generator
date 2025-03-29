@@ -1,7 +1,7 @@
 /* Filename: globals.css */
 /* basic application styling */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Winky+Sans&display=swap');
 
 * {
   box-sizing: border-box;
@@ -80,7 +80,7 @@ blockquote {
   display: flex;
   flex-direction: column;
   font-size: xx-large;
-  font-family: Schoolbell, sans-serif;
+  font-family: 'Winky Sans', sans-serif;
   text-align: center;
 }
 
