@@ -10,7 +10,6 @@ const generateBtn = document.querySelector('#generate-button');
 const changePictureGreeting = async () => {
   try {
     const response = await fetch('/generate');
-
     if (!response.ok) {
       throw new Error(`HTTP Error: ${response.status}`);
     }
@@ -32,7 +31,8 @@ const changePictureGreetingChain = () => {
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
       }
-      response.json();
+
+      return response.json();
     })
     .then((data) => {
       image.setAttribute('src', data.imgPath);
