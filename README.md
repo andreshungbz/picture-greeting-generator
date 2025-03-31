@@ -4,11 +4,7 @@ A simple web application for the CMPS2212 GUI Programming course that demonstrat
 
 Picture Greeting Generator is an Express.js application that initally loads a data object containing image paths and greeting objects read from the `public/images` and `public/greetings` directories. It exposes two routes, `GET /` which gets a random image and greeting based soley on the date, and `GET /generate` which does the same but accounts for time up to the millisecond. You can easily extend more images and greetings by adding them to the respective directories.
 
-Refer to the `public/scripts/main.js` to see see the demonstration of asynchronous programming using JavaScript Promises and the async/await syntax.
-
-## Video Demonstration
-
-A video demonstration of the application can be found on following [YouTube video link]().
+Refer to the `public/scripts/main.js` to see see the demonstration of asynchronous programming using JavaScript Promises and the async/await syntax. The same function is also demonstrated using promise chaining.
 
 ## Running The Application
 
