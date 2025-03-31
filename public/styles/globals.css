@@ -65,9 +65,12 @@ footer a {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  margin: 50px 0;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: start;
   gap: 10px;
 }
 
@@ -110,8 +113,7 @@ blockquote {
 
 @media screen and (max-width: 400px) {
   main {
-    justify-content: start;
-    margin: 0 10px;
+    margin: 10px;
   }
 
   #image {
