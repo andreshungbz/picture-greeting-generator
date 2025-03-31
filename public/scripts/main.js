@@ -8,12 +8,21 @@ const generateBtn = document.querySelector('#generate-button');
 
 // version using async/await syntax
 const changePictureGreeting = async () => {
-  const response = await fetch('/generate');
-  const data = await response.json();
+  try {
+    const response = await fetch('/generate');
 
-  image.setAttribute('src', data.imgPath);
-  greeting.textContent = data.greeting.text;
-  author.textContent = data.greeting.author;
+    if (!response.ok) {
+      throw new Error(`HTTP Error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    image.setAttribute('src', data.imgPath);
+    greeting.textContent = data.greeting.text;
+    author.textContent = data.greeting.author;
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 // version using Promise chaining
@@ -24,7 +33,8 @@ const changePictureGreetingChain = () => {
       image.setAttribute('src', data.imgPath);
       greeting.textContent = data.greeting.text;
       author.textContent = data.greeting.author;
-    });
+    })
+    .catch((err) => console.log(err));
 };
 
 generateBtn.addEventListener('click', changePictureGreeting);
