@@ -28,7 +28,12 @@ const changePictureGreeting = async () => {
 // version using Promise chaining
 const changePictureGreetingChain = () => {
   fetch('/generate')
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP Error: ${response.status}`);
+      }
+      response.json();
+    })
     .then((data) => {
       image.setAttribute('src', data.imgPath);
       greeting.textContent = data.greeting.text;
